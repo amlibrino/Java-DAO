@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.image.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.geometry.*?>
+<?import java.lang.*?>
+<?import java.net.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane id="AnchorPane" prefHeight="439.0" prefWidth="709.0" styleClass="mainFxmlClass" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.afpa.dal.GUIController">
+    <stylesheets>
+        <URL value="@/styles/gui.css" />
+    </stylesheets>
+   <children>
+      <Pane fx:id="pane_detail" layoutX="353.0" layoutY="53.0" prefHeight="329.0" prefWidth="287.0" style="-fx-background-color: #AED6F1; -fx-border-color: #7D3C98;" visible="false">
+         <children>
+            <Button layoutX="20.0" layoutY="272.0" mnemonicParsing="false" onAction="#OK_Update" prefHeight="25.0" prefWidth="72.0" style="-fx-border-color: green;" text="Modifier" />
+            <Button layoutX="187.0" layoutY="272.0" mnemonicParsing="false" onAction="#Annuler" prefHeight="25.0" prefWidth="72.0" style="-fx-border-color: red;" text="Annuler" />
+            <Label layoutX="12.0" layoutY="14.0" prefHeight="26.0" prefWidth="135.0" text="Détails client">
+               <font>
+                  <Font size="17.0" />
+               </font>
+            </Label>
+            <Label layoutX="20.0" layoutY="139.0" prefHeight="17.0" prefWidth="32.0" text="Nom" />
+            <TextField fx:id="txt_nom1" layoutX="80.0" layoutY="135.0" />
+            <Label layoutX="13.0" layoutY="74.0" prefHeight="17.0" prefWidth="46.0" text="Prénom" />
+            <TextField fx:id="txt_prenom1" layoutX="80.0" layoutY="70.0" />
+            <Label layoutX="20.0" layoutY="197.0" prefHeight="17.0" prefWidth="32.0" text="Ville" />
+            <TextField fx:id="txt_ville1" layoutX="80.0" layoutY="193.0" />
+            <Button layoutX="107.0" layoutY="273.0" mnemonicParsing="false" onAction="#Effacer" prefHeight="25.0" prefWidth="63.0" style="-fx-border-color: blue;" text="Effacer" />
+            <Label fx:id="Error_modif" layoutX="30.0" layoutY="234.0" prefHeight="17.0" prefWidth="215.0" text="Veuillez corriger les champs en rouge" textFill="#e80a27" visible="false" />
+         </children>
+      </Pane>
+      <TableView fx:id="list_client" layoutX="29.0" layoutY="57.0" prefHeight="320.0" prefWidth="200.0" style="-fx-background-color: #E8DAEF; -fx-border-color: #8E44AD;">
+        <columns>
+          <TableColumn fx:id="col_nom" editable="false" prefWidth="104.0" text="NOM" />
+          <TableColumn fx:id="col_prenom" editable="false" prefWidth="97.0" text="PRENOM" />
+            <TableColumn fx:id="col_id" editable="false" minWidth="0.0" prefWidth="29.0" text="id" visible="false" />
+        </columns>
+      </TableView>
+      <VBox fx:id="VBOX" layoutX="237.0" layoutY="46.0" prefHeight="359.0" prefWidth="180.0" spacing="30.0" AnchorPane.bottomAnchor="34.0" AnchorPane.leftAnchor="237.0" AnchorPane.rightAnchor="292.0" AnchorPane.topAnchor="46.0">
+         <children>
+            <Button alignment="CENTER" contentDisplay="CENTER" lineSpacing="10.0" mnemonicParsing="false" onAction="#click_add" prefHeight="25.0" prefWidth="72.0" style="-fx-border-color: green;" text="Ajouter">
+               <VBox.margin>
+                  <Insets bottom="30.0" left="20.0" right="20.0" top="30.0" />
+               </VBox.margin></Button>
+            <Button alignment="CENTER" contentDisplay="CENTER" lineSpacing="10.0" mnemonicParsing="false" onAction="#click_update" prefHeight="25.0" prefWidth="72.0" style="-fx-border-color: blue;" text="Modifier">
+               <VBox.margin>
+                  <Insets bottom="30.0" left="20.0" right="20.0" top="30.0" />
+               </VBox.margin></Button>
+            <Button alignment="CENTER" contentDisplay="CENTER" lineSpacing="10.0" mnemonicParsing="false" onAction="#delete" style="-fx-border-color: red;" text="Supprimer">
+               <VBox.margin>
+                  <Insets bottom="30.0" left="20.0" right="20.0" top="30.0" />
+               </VBox.margin></Button>
+         </children>
+      </VBox>
+      <Pane fx:id="pane_ajout" layoutX="363.0" layoutY="57.0" prefHeight="320.0" prefWidth="287.0" style="-fx-border-color: blue; -fx-background-color: khaki;" visible="false">
+         <children>
+            <Label layoutX="23.0" layoutY="22.0" prefHeight="26.0" prefWidth="72.0" text="Ajouter un client">
+               <font>
+                  <Font size="17.0" />
+               </font>
+            </Label>
+            <Label layoutX="20.0" layoutY="88.0" prefHeight="17.0" prefWidth="32.0" text="Nom" />
+            <Label layoutX="20.0" layoutY="143.0" prefHeight="17.0" prefWidth="46.0" text="Prénom" />
+            <Label layoutX="25.0" layoutY="203.0" text="Ville" />
+            <Button layoutX="16.0" layoutY="272.0" mnemonicParsing="false" onAction="#OK_Insert" prefHeight="25.0" prefWidth="72.0" style="-fx-border-color: green;" text="OK" />
+            <Button layoutX="183.0" layoutY="272.0" mnemonicParsing="false" onAction="#Annuler" prefHeight="25.0" prefWidth="72.0" style="-fx-border-color: red;" text="Annule" />
+            <TextField fx:id="txt_nom" layoutX="82.0" layoutY="84.0" />
+            <TextField fx:id="txt_prenom" layoutX="82.0" layoutY="139.0" />
+            <TextField fx:id="txt_ville" layoutX="82.0" layoutY="199.0" />
+            <Button layoutX="104.0" layoutY="272.0" mnemonicParsing="false" onAction="#Effacer" prefHeight="25.0" prefWidth="63.0" style="-fx-border-color: blue;" text="Effacer" />
+            <Label fx:id="Error_ajout" layoutX="40.0" layoutY="237.0" prefHeight="17.0" prefWidth="200.0" text="Veuillez corriger les champs en rouge" textFill="#e40620" visible="false" />
+         </children>
+      </Pane>
+   </children>
+</AnchorPane>

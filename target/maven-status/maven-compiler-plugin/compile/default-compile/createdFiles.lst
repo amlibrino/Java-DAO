@@ -1,0 +1,5 @@
+com\afpa\dal\Client.class
+com\afpa\dal\ClientDAO.class
+com\afpa\dal\GUIController.class
+com\afpa\dal\App.class
+com\afpa\dal\dbconnexion.class
